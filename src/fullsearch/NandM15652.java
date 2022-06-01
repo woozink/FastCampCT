@@ -1,94 +1,88 @@
 package fullsearch;
 
 import java.io.*;
+import java.sql.SQLOutput;
 import java.util.StringTokenizer;
 
-public class NandM15649 {
-
+public class NandM15652 {
     static StringBuilder sb = new StringBuilder();
+    static int N,M;
+    static int[] selected;
 
-    static void input() {
+    static void input(){
         FastReader scan = new FastReader();
         N = scan.nextInt();
         M = scan.nextInt();
         selected = new int[M+1];
-        used= new int[N+1];
     }
 
-    static int N, M;
 
-    static int[] selected, used;
 
     static void recFunc(int k) {
         if(k == M+1){
-            for(int i =1; i <= M; i++){
+            for(int i =1; i <=M; i++){
                 sb.append(selected[i]).append(' ');
             }
             sb.append('\n');
-        }
-        else{
-            for(int cand = 1; cand<= N; cand ++){
-                if(used[cand] == 1){
-                    continue;
-                }
-                selected[k] = cand;
-                used[cand] =1;
+        }else{
+            int start = selected[k-1];
+            if(start == 0) start = 1;
+
+            for(int i =start; i <= N; i++){
+                selected[k] = i;
                 recFunc(k+1);
                 selected[k] = 0;
-                used[cand] =0;
             }
         }
     }
-
     public static void main(String[] args) {
         input();
         recFunc(1);
         System.out.println(sb.toString());
     }
 
-    static class FastReader {
+
+    static class FastReader{
         BufferedReader br;
         StringTokenizer st;
 
-        public FastReader() {
+        public FastReader(){
             br = new BufferedReader(new InputStreamReader(System.in));
         }
-
         public FastReader(String s) throws FileNotFoundException {
             br = new BufferedReader(new FileReader(new File(s)));
         }
 
-        String next() {
-            while (st == null || !st.hasMoreElements()) {
-                try {
+        String next(){
+            while (st == null || !st.hasMoreElements()){
+                try{
                     st = new StringTokenizer(br.readLine());
-                } catch (IOException e) {
+                }catch (IOException e){
                     e.printStackTrace();
                 }
             }
             return st.nextToken();
         }
 
-        int nextInt() {
+        int nextInt(){
             return Integer.parseInt(next());
         }
-
-        long nextLong() {
+        long nextLong(){
             return Long.parseLong(next());
         }
-
-        double nextDouble() {
+        double nextDouble(){
             return Double.parseDouble(next());
         }
 
-        String nextLine() {
+        String nextLine(){
             String str = "";
             try {
                 str = br.readLine();
-            } catch (IOException e) {
+            }catch (IOException e){
                 e.printStackTrace();
             }
             return str;
         }
     }
 }
+
