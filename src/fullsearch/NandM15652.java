@@ -2,6 +2,7 @@ package fullsearch;
 
 import java.io.*;
 import java.sql.SQLOutput;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class NandM15652 {
@@ -48,9 +49,6 @@ public class NandM15652 {
 
         public FastReader(){
             br = new BufferedReader(new InputStreamReader(System.in));
-        }
-        public FastReader(String s) throws FileNotFoundException {
-            br = new BufferedReader(new FileReader(new File(s)));
         }
 
         String next(){
