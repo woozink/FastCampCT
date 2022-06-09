@@ -1,4 +1,4 @@
-package backtrackingEx;
+package bruteforceEx;
 
 public class SelfNumMyS {
     static boolean[] check = new boolean[10001];

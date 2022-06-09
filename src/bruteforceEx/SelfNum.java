@@ -1,4 +1,4 @@
-package backtrackingEx;
+package bruteforceEx;
 // 1 ~ 10000 이하의 생성자가 없는 수를 구하는 것
 // boolean 배열을 선언하여 셀프 넘버를 구분 배열의 길이는 10001
 public class SelfNum {
