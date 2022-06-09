@@ -3,7 +3,6 @@ package bruteforceEx;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-//등차수열 -> 한수 -> N이 주어짐 1<= x <=N x의 개수 출력
 public class OneNum {
 
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -32,3 +31,9 @@ public class OneNum {
         System.out.println(sequence(Integer.parseInt(br.readLine())));
     }
 }
+/*
+문제 접근
+
+등차 수열이면 1000까지니까 100의 자리 수 10의 자리수 1의 자리수를 각각 구해가지구
+백 - 텐 == 텐 - 일 한 수들만 cnt ++ 해주면 끝나는 로직.. !
+ */
