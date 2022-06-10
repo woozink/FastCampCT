@@ -24,14 +24,13 @@ public class Blackjak {
     }
 
     public static void logic(int[] arr, int N, int M) {
-        int sum = 0;
         int tmp =0;
         for (int i = 0; i < N-2; i++) {
             for (int j = i + 1; j < N-1; j++) {
                 for (int h = j + 1; h < N; h++) {
-                    sum = (arr[i] + arr[j] + arr[h]);
+                    int sum = (arr[i] + arr[j] + arr[h]);
                     if(sum == M) tmp = sum;
-                    if(sum > M) continue;
+                    else if(sum > M) continue;
                     else{
                         if(tmp < sum) tmp = sum;
                     }

@@ -6,14 +6,12 @@ import java.io.InputStreamReader;
 public class OneNum {
 
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static StringBuilder sb = new StringBuilder();
 
     public static int sequence(int num){
-        int cnt = 0;
         if(num < 100){
             return num;
         }else{
-            cnt =99;
+            int cnt =99;
             for(int i = 100; i <= num; i++){
                 int hun = i /100;
                 int ten = (i /10) % 10;
@@ -23,12 +21,13 @@ public class OneNum {
                     cnt ++;
                 }
             }
+            return cnt;
         }
-        return cnt;
     }
 
     public static void main(String[] args) throws IOException {
-        System.out.println(sequence(Integer.parseInt(br.readLine())));
+        int sequence = sequence(Integer.parseInt(br.readLine()));
+        System.out.println(sequence);
     }
 }
 /*
