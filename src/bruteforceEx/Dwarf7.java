@@ -16,9 +16,6 @@ public class Dwarf7 {
         solution(arr);
     }
 
-    public static void solution(int[] arr){
-        int sum = 0;
-    }
 
     public static void main(String[] args) throws IOException {
 
